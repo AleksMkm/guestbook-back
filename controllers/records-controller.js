@@ -2,7 +2,7 @@ const Records = require('../model/records')
 
 const { HttpCode, Status } = require('../helpers/constants')
 
-async function create(req, res, next) {
+const createRecord = async (req, res, next) => {
   try {
     const record = await Records.addRecord(req.body)
     console.log('db create record response', record)
@@ -19,6 +19,20 @@ async function create(req, res, next) {
   }
 }
 
+const getAllRecords = async (req, res, next) => {
+  try {
+    const records = await Records.getRecords(req.query)
+    return res.status(HttpCode.OK).json({
+      status: Status.SUCCESS,
+      code: HttpCode.OK,
+      data: records
+    })
+  } catch (e) {
+    next(e)
+  }
+}
+
 module.exports = {
-  create
+  createRecord,
+  getAllRecords
 }

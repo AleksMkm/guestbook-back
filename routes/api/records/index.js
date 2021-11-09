@@ -5,7 +5,7 @@ const recordsController = require('../../../controllers/records-controller')
 const validate = require('./validation')
 
 router
-  // .get('/', recordsController.getAll)
-  .post('/', validate.createRecord, recordsController.create)
+  .get('/', recordsController.getAllRecords)
+  .post('/', validate.createRecord, recordsController.createRecord)
 
 module.exports = router
