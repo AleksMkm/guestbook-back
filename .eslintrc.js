@@ -9,8 +9,7 @@ module.exports = {
   extends: [
     'standard',
     'plugin:json/recommended',
-    'plugin:json/recommended',
-    'plugin:react/recommended'
+    'plugin:json/recommended'
   ],
   parserOptions: {
     ecmaVersion: 2021
@@ -47,22 +46,6 @@ module.exports = {
       maxEOF: 1
     }],
     'brace-style': 'error',
-    'object-curly-newline': ['error', { consistent: true }],
-    'react/prop-types': 0,
-    'react/self-closing-comp': ['error', {
-      component: true, html: true
-    }],
-    'react/jsx-closing-bracket-location': ['error', 'after-props'],
-    'react/jsx-fragments': ['error', 'syntax'],
-    'react/jsx-curly-spacing': ['error', 'never'],
-    'react/jsx-curly-brace-presence': ['error', 'never'],
-    'react/display-name': ['off'],
-    'react/jsx-curly-newline': ['error', { multiline: 'consistent', singleline: 'consistent' }],
-    'react/jsx-tag-spacing': ['error', {
-      closingSlash: 'never',
-      beforeSelfClosing: 'always',
-      afterOpening: 'never',
-      beforeClosing: 'never'
-    }]
+    'object-curly-newline': ['error', { consistent: true }]
   }
 }
