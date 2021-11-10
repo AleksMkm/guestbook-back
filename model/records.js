@@ -6,7 +6,7 @@ const addRecord = async (body) => {
 }
 
 const getRecords = async () => {
-  const results = await Record.find({})
+  const results = await Record.find({}).sort({ createdAt: -1 })
   return results
 }
 
