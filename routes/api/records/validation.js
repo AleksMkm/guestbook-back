@@ -17,12 +17,11 @@ const validate = (schema, obj, next) => {
   const { error } = schema.validate(obj)
   if (error) {
     const [{ context, message }] = error.details
-    console.log('edt', error.details)
+    const field = context.label
     return next({
       status: HttpCode.BAD_REQUEST,
       message: {
-        field: context.label,
-        message: message
+        [field]: message
       }
     })
   }
